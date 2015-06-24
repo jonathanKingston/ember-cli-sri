@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-sri",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1-beta",
+  "description": "SRI generation for Ember CLI",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -15,10 +15,11 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Jonathan Kingston",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
+    "broccoli-sri-hash": "0.0.1-beta",
     "ember-cli": "0.2.5",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-content-security-policy": "0.4.0",

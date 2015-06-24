@@ -1,6 +1,8 @@
 # Ember-cli-sri
 
-This README outlines the details of collaborating on this Ember addon.
+This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications.
+
+This is **BETA**, untested and **MUST NOT** be used for production systems.
 
 ## Installation
 
