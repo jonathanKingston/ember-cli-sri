@@ -6,7 +6,7 @@ module.exports = {
   included: function(app) {
     this._super.included.apply(this,arguments);
 
-    this.options = app.options;
+    this.options = app.options.SRI || {};
     if ('fingerprint' in app.options && 'prepend' in app.options.fingerprint) {
       this.options.prefix = app.options.fingerprint.prepend;
     }
