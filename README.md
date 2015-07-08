@@ -1,4 +1,7 @@
 # Ember-cli-sri
+[![npm status](http://img.shields.io/npm/v/ember-cli-sri.svg)](https://www.npmjs.org/package/ember-cli-sri)
+[![build status](https://secure.travis-ci.org/jonathanKingston/ember-cli-sri.svg)](http://travis-ci.org/jonathanKingston/ember-cli-sri)
+[![dependency status](https://david-dm.org/jonathanKingston/ember-cli-sri.svg)](https://david-dm.org/jonathanKingston/ember-cli-sri)
 
 This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications.
 
