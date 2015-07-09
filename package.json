@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-sri",
-  "version": "0.1.2-beta",
+  "version": "0.2.0",
   "description": "SRI generation for Ember CLI",
   "directories": {
     "doc": "doc",
@@ -38,7 +38,7 @@
     "ember-try": "0.0.4"
   },
   "dependencies": {
-    "broccoli-sri-hash": "0.1.1-beta",
+    "broccoli-sri-hash": "0.2.0",
     "ember-cli-babel": "^5.0.0"
   },
   "keywords": [
