@@ -8,12 +8,15 @@ module.exports = {
 
     this.options = app.options.SRI || {};
 
-    // SRI is default on
     if (!('enabled' in this.options)) {
       this.options.enabled = true;
     }
-    // Development defaults to be off
-    if (app.env === 'development') {
+
+    // SRI is default on
+    this.options.runsIn = this.options.runsIn || ['production', 'test'];
+
+    // Disable if application isn't in runs-in
+    if (this.options.runsIn.indexOf(app.env) === -1) {
       this.options.enabled = false;
     }
 
