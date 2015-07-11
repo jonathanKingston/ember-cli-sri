@@ -31,7 +31,7 @@ var app = new EmberApp({
   - **crossorigin** - adds a crossorigin attribute to script and link elements
       - This is **required** for CORS resources values are:
           - `use-credentials`
-          - `anonymous` - this will be the default if `origin` and `fingerprint.prepend` match
+          - `anonymous`
   - **runsIn** - default: ['production', 'test']
   - **enabled** - default: true
 - **fingerprint**
@@ -45,6 +45,19 @@ var app = new EmberApp({
 <script src="unicode-chars.js" integrity="sha256-TH5eRuwfOSKZE0EKVF4WZ6gVQ/zUch4CZE2knqpS4MU= sha512-eANuTl8NOQEa4/zm44zxX6g7ffwf6NXftA2sv4ZiQURnJsfJkUnYP8XpN2XVVZee4SjB32i28WM6trs9HVgQmA=="/></script>
 ```
 
+## Fail safe
+
+This addon should fail safely at all times so resources matching `https?` need:
+
+- Asset URL needs to start with `fingerprint.prepend`
+- Asset must use fingerprinting with md5
+- Asset must match md5 sum to what is in the filesystem
+- A `SRI.crossorigin` attribute must be set
+
+If the config is not set correctly it should result in just a lack of SRI protection, which is better than a broken website.
+
+Please file bugs if you find a case when the config doesn't 'fail safe', is not clear or results in a broken page.
+
 ## Gotchas
 
 - If your Ember application is **NOT** being loaded on the same origin as in `fingerprint.prefix`:
@@ -52,6 +65,8 @@ var app = new EmberApp({
 
 - If your Ember application **is** being loaded on the same origin as in `fingerprint.prefix`:
   - Setting the crossorigin attribute isn't advised unless origin is serving [CORS Headers](http://www.w3.org/TR/cors/)
+
+- In code that uses SRI, you **MUST NOT** tamper with the built output JavaScript files as code will not load.
 
 ## Crossorigin attribute
 
@@ -64,7 +79,12 @@ Values:
 - **use-credentials** - A cross-origin request (i.e., with Origin: HTTP header) performed with credential is sent (i.e., a cookie, a certificate, and HTTP Basic authentication is performed). If the server does not give credentials to the origin site (through Access-Control-Allow-Credentials: HTTP header), the resource will be tainted and its usage restricted.
 
 
+## Browser support
 
+- Chrome 45 (Currently in unstable)
+- Firefox stable 41 [source](http://www.theregister.co.uk/2015/06/04/new_firefox_chrome_sri_script_whip_to_foil_maninthemiddle_diddle/)
+
+No known formal objections to the specification
 
 ## Running Tests
 
