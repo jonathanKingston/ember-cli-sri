@@ -23,6 +23,10 @@ module.exports = {
     if ('fingerprint' in app.options && 'prepend' in app.options.fingerprint) {
       this.options.prefix = app.options.fingerprint.prepend;
     }
+
+    if (app.options.origin) {
+      this.options.origin = app.options.origin;
+    }
   },
   postprocessTree: function(type, tree) {
     var options = this.options || {};

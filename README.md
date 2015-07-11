@@ -25,8 +25,25 @@ var app = new EmberApp({
 });
 ```
 
+Or:
+```
+var app = new EmberApp({
+  origin: 'https://subdomain.cloudfront.net/',
+  fingerprint: {
+    prepend: 'https://subdomain.cloudfront.net/'
+  }
+});
+```
+
+Or:
+```
+var app = new EmberApp({
+});
+```
+
 ### Options
 
+- **origin** - set to the URL the Ember is served from (Example: https://example.com)
 - **SRI**
   - **crossorigin** - adds a crossorigin attribute to script and link elements
       - This is **required** for CORS resources values are:
