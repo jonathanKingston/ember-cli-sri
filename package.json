@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-sri",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "SRI generation for Ember CLI",
   "directories": {
     "doc": "doc",
@@ -32,13 +32,14 @@
     "ember-cli-qunit": "0.3.13",
     "ember-cli-uglify": "^1.0.1",
     "ember-data": "1.0.0-beta.17",
+    "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^0.7.0",
     "ember-export-application-global": "^1.0.2",
-    "ember-disable-prototype-extensions": "^1.0.0",
-    "ember-try": "0.0.4"
+    "ember-try": "0.0.4",
+    "phantomjs": "^1.9.17"
   },
   "dependencies": {
-    "broccoli-sri-hash": "0.2.2",
+    "broccoli-sri-hash": "0.2.3",
     "ember-cli-babel": "^5.0.0"
   },
   "keywords": [
