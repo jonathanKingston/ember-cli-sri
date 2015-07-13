@@ -99,7 +99,7 @@ Values:
 ## Browser support
 
 - Chrome 45 (Currently in unstable)
-- Firefox stable 41 [source](http://www.theregister.co.uk/2015/06/04/new_firefox_chrome_sri_script_whip_to_foil_maninthemiddle_diddle/)
+- Firefox stable 42
 
 No known formal objections to the specification
 
