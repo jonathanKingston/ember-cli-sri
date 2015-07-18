@@ -3,7 +3,12 @@
 [![build status](https://secure.travis-ci.org/jonathanKingston/ember-cli-sri.svg)](http://travis-ci.org/jonathanKingston/ember-cli-sri)
 [![dependency status](https://david-dm.org/jonathanKingston/ember-cli-sri.svg)](https://david-dm.org/jonathanKingston/ember-cli-sri)
 
-This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications. The reason to add this to your application is to protect against poisoned CDNs breaking JavaScript or CSS.
+## What is it
+This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications.
+Subresource integrity is a security concept used to check JavaScript and Stylesheets are loaded with the correct content when using a CDN.
+
+## Why
+The reason to add this to your application is to protect against poisoned CDNs breaking JavaScript or CSS.
 
 This is **BETA**, untested and **MUST NOT** be used for production systems.
 
