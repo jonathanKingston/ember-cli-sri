@@ -10,6 +10,10 @@ Subresource integrity is a security concept used to check JavaScript and Stylesh
 ## Why
 The reason to add this to your application is to protect against poisoned CDNs breaking JavaScript or CSS.
 
+- [JavaScript DDoS prevention](https://blog.cloudflare.com/an-introduction-to-javascript-based-ddos/)
+  - The latest [GitHub DDos attack](http://googleonlinesecurity.blogspot.co.uk/2015/04/a-javascript-based-ddos-attack-as-seen.html)
+- Protection against corrupted code on less trusted servers
+
 This is **BETA**, untested and **MUST NOT** be used for production systems.
 
 ## Installation
@@ -19,6 +23,15 @@ This is **BETA**, untested and **MUST NOT** be used for production systems.
 ## Configure
 
 In `Brocfile.js` or `ember-cli-build.js`:
+```
+var app = new EmberApp({
+});
+```
+
+- Without fingerprinting Ember will default to using relative URLS
+- All relative paths will be given an integrity attribute which will make compliant browsers check content matches
+
+Or:
 ```
 var app = new EmberApp({
   SRI: {
@@ -37,12 +50,6 @@ var app = new EmberApp({
   fingerprint: {
     prepend: 'https://subdomain.cloudfront.net/'
   }
-});
-```
-
-Or:
-```
-var app = new EmberApp({
 });
 ```
 
