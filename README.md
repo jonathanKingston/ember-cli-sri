@@ -1,7 +1,8 @@
 # Ember-cli-sri
+[![Build Status][travis-badge]][travis-badge-url]
 [![npm status](http://img.shields.io/npm/v/ember-cli-sri.svg)](https://www.npmjs.org/package/ember-cli-sri)
-[![build status](https://secure.travis-ci.org/jonathanKingston/ember-cli-sri.svg)](http://travis-ci.org/jonathanKingston/ember-cli-sri)
 [![dependency status](https://david-dm.org/jonathanKingston/ember-cli-sri.svg)](https://david-dm.org/jonathanKingston/ember-cli-sri)
+[![Build status](https://ci.appveyor.com/api/projects/status/ofw7jyx7cvx4pt7y?svg=true)](https://ci.appveyor.com/project/jonathanKingston/ember-cli-sri)
 
 ## What is it
 This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications.
@@ -13,8 +14,6 @@ The reason to add this to your application is to protect against poisoned CDNs b
 - [JavaScript DDoS prevention](https://blog.cloudflare.com/an-introduction-to-javascript-based-ddos/)
   - The latest [GitHub DDos attack](http://googleonlinesecurity.blogspot.co.uk/2015/04/a-javascript-based-ddos-attack-as-seen.html)
 - Protection against corrupted code on less trusted servers
-
-This is **BETA**, untested and **MUST NOT** be used for production systems.
 
 ## Installation
 
