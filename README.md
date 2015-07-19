@@ -5,13 +5,13 @@
 
 ## What is it
 This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications.
-Subresource integrity is a security concept used to check JavaScript and Stylesheets are loaded with the correct content when using a CDN.
+Subresource integrity is a security concept used to check JavaScript and stylesheets are loaded with the correct content when using a CDN.
 
 ## Why
 The reason to add this to your application is to protect against poisoned CDNs breaking JavaScript or CSS.
 
 - [JavaScript DDoS prevention](https://blog.cloudflare.com/an-introduction-to-javascript-based-ddos/)
-  - The latest [GitHub DDos attack](http://googleonlinesecurity.blogspot.co.uk/2015/04/a-javascript-based-ddos-attack-as-seen.html)
+  - The latest [GitHub DDoS attack](http://googleonlinesecurity.blogspot.co.uk/2015/04/a-javascript-based-ddos-attack-as-seen.html)
 - Protection against corrupted code on less trusted servers
 
 ## Installation
@@ -26,7 +26,7 @@ var app = new EmberApp({
 });
 ```
 
-- Without fingerprinting Ember will default to using relative URLS
+- Without fingerprinting Ember will default to using relative URLs
 - All relative paths will be given an integrity attribute which will make compliant browsers check content matches
 
 Or:
@@ -53,10 +53,10 @@ var app = new EmberApp({
 
 ### Options
 
-- **origin** - set to the URL the Ember is served from (Example: https://example.com)
+- **origin** - set to the URL the Ember app is served from (Example: https://example.com)
 - **SRI**
   - **crossorigin** - adds a crossorigin attribute to script and link elements
-      - This is **required** for CORS resources values are:
+      - This is **required** for CORS resources, values are:
           - `use-credentials`
           - `anonymous`
   - **runsIn** - default: ['production', 'test']
@@ -79,7 +79,7 @@ This addon should fail safely at all times so resources matching `https?` need:
 - Asset URL needs to start with `fingerprint.prepend`
 - Asset must use fingerprinting with md5
 - Asset must match md5 sum to what is in the filesystem
-- A `SRI.crossorigin` attribute must be set or a matching `origin` to `fingerprint.prepend`
+- An `SRI.crossorigin` attribute must be set or a matching `origin` to `fingerprint.prepend`
 
 If the config is not set correctly it should result in just a lack of SRI protection, which is better than a broken website.
 
@@ -98,12 +98,12 @@ Please file bugs if you find a case when the config doesn't 'fail safe', is not 
 ## Crossorigin attribute
 
 When the request doesn't match Same Origin Policy the [crossorigin attribute](https://html.spec.whatwg.org/multipage/infrastructure.html#cors-settings-attribute) **MUST** be present for the integrity of the file to be checked.
-With an integrity set on an external origin and a missing crossorigin then the browser will choose to 'fail-open' which means it will load the resource as if the integrity attribute was not set.
+With an integrity set on an external origin and a missing crossorigin the browser will choose to 'fail-open' which means it will load the resource as if the integrity attribute was not set.
 
 Values:
 
-- **anonymous** - A cross-origin request (i.e., with Origin: HTTP header) is performed. But no credential is sent (i.e., no cookie, no X.509 certificate, and no HTTP Basic authentication is sent). If the server does not give credentials to the origin site (by not setting the Access-Control-Allow-Origin: HTTP header), the resource will be tainted and its usage restricted.
-- **use-credentials** - A cross-origin request (i.e., with Origin: HTTP header) performed with credential is sent (i.e., a cookie, a certificate, and HTTP Basic authentication is performed). If the server does not give credentials to the origin site (through Access-Control-Allow-Credentials: HTTP header), the resource will be tainted and its usage restricted.
+- **anonymous** - A cross-origin request (i.e., with Origin: HTTP header) is performed. But no credentials are sent (i.e., no cookie, no X.509 certificate, and no HTTP Basic authentication is sent). If the server does not give credentials to the origin site (by not setting the Access-Control-Allow-Origin: HTTP header), the resource will be tainted and its usage restricted.
+- **use-credentials** - A cross-origin request (i.e., with Origin: HTTP header) performed with credentials (i.e., a cookie, a certificate, and HTTP Basic authentication is performed). If the server does not give credentials to the origin site (through Access-Control-Allow-Credentials: HTTP header), the resource will be tainted and its usage restricted.
 
 ## 'Fail-open' vs 'Fail-close'
 
@@ -118,7 +118,7 @@ Values:
 - Firefox stable 42
 
 Notes:
-- Please verify ember applications in supporting browsers, paying close attention to console messages
+- Please verify Ember applications in supporting browsers, paying close attention to console messages
 - No known formal objections to the specification
 
 ## Running Tests

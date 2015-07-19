@@ -1,3 +1,8 @@
+# 1.0.1
+# 1.0.2
+
+- README fixes
+
 # 1.0.0
 - Bumped to the latest version of broccoli-sri-hash
 - Updated README to add in lots of help and rationale of use
