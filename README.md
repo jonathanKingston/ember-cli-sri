@@ -4,11 +4,11 @@
 [![dependency status](https://david-dm.org/jonathanKingston/ember-cli-sri.svg)](https://david-dm.org/jonathanKingston/ember-cli-sri)
 
 ## What is it
-This plugin is used to generate [SRI integrity](http://www.w3.org/TR/SRI/) for ember applications.
+This plugin is used to generate [Subresource Integrity (SRI)](http://www.w3.org/TR/SRI/) hashes for ember applications.
 Subresource integrity is a security concept used to check JavaScript and stylesheets are loaded with the correct content when using a CDN.
 
 ## Why
-The reason to add this to your application is to protect against poisoned CDNs breaking JavaScript or CSS.
+The reason to add this to your application is to protect against poisoned CDNs breaking JavaScript or CSS subresources.
 
 - [JavaScript DDoS prevention](https://blog.cloudflare.com/an-introduction-to-javascript-based-ddos/)
   - The latest [GitHub DDoS attack](http://googleonlinesecurity.blogspot.co.uk/2015/04/a-javascript-based-ddos-attack-as-seen.html)
@@ -41,6 +41,10 @@ var app = new EmberApp({
 });
 ```
 
+- If your applications origin is different to where your subresources load from you will need to use CORS
+- Your subresources will need to be served with CORS headers
+- You will need to specify `SRI.crossorigin`
+
 Or:
 ```
 var app = new EmberApp({
@@ -50,6 +54,8 @@ var app = new EmberApp({
   }
 });
 ```
+
+- If you like absolute URLs in your HTML then let the addon know by specifying a `origin` attribute
 
 ### Options
 
