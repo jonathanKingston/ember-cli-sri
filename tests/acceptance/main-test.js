@@ -18,7 +18,6 @@ test('visiting /main', function(assert) {
   visit('/main');
 
   andThen(function() {
-    var integrity = find('body').text();
     var scripts = document.querySelectorAll('script,link');
     [].forEach.call(scripts, function (script) {
       var integrity = script.getAttribute('integrity');
