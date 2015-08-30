@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-sri",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SRI generation for Ember CLI",
   "directories": {
     "doc": "doc",
@@ -33,7 +33,6 @@
     "ember-cli-qunit": "^1.0.0",
     "ember-cli-release": "0.2.3",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "1.13.8",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
     "ember-disable-prototype-extensions": "^1.0.0",
