@@ -1,16 +1,14 @@
 import Ember from 'ember';
 import { module, test } from 'qunit';
-import startApp from 'dummy/tests/helpers/start-app';
-
-var application;
+import startApp from '../../tests/helpers/start-app';
 
 module('Acceptance | main', {
   beforeEach: function() {
-    application = startApp();
+    this.application = startApp();
   },
 
   afterEach: function() {
-    Ember.run(application, 'destroy');
+    Ember.run(this.application, 'destroy');
   }
 });
 
@@ -24,6 +22,7 @@ test('visiting /main', function(assert) {
       assert.ok(/sha256[-]/.test(integrity), 'must have sha256');
       assert.ok(/sha512[-]/.test(integrity), 'must have sha512');
     });
-    
+
+    assert.equal(currentURL(), '/main');
   });
 });
