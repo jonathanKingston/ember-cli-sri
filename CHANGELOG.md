@@ -1,5 +1,6 @@
 # 1.1.0
 - Enable by default paranoiaCheck
+- Force code to run after ember-cli-gzip thanks @taylon
 
 # 1.0.4
 - Removal of ember-data from package.json as not required and failing tests
