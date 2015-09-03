@@ -16,12 +16,20 @@ test('visiting /main', function(assert) {
   visit('/main');
 
   andThen(function() {
+    var singleCheck = false;
     var scripts = document.querySelectorAll('script,link');
+
     [].forEach.call(scripts, function (script) {
       var integrity = script.getAttribute('integrity');
-      assert.ok(/sha256[-]/.test(integrity), 'must have sha256');
-      assert.ok(/sha512[-]/.test(integrity), 'must have sha512');
+
+      if (integrity !== null) {
+        singleCheck = true;
+        assert.ok(/sha256[-]/.test(integrity), 'must have sha256');
+        assert.ok(/sha512[-]/.test(integrity), 'must have sha512');
+      }
     });
+
+    assert.ok(singleCheck, 'has at least one integrity check');
 
     assert.equal(currentURL(), '/main');
   });

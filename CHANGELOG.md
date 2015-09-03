@@ -1,3 +1,11 @@
+# 1.1.0
+- Enable by default paranoiaCheck
+
+# 1.0.4
+- Removal of ember-data from package.json as not required and failing tests
+- Fixing acceptance test injection
+- Updating to latest ember-cli-build syntax
+
 # 1.0.1
 # 1.0.2
 # 1.0.3

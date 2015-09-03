@@ -67,6 +67,7 @@ var app = new EmberApp({
           - `anonymous`
   - **runsIn** - default: ['production', 'test']
   - **enabled** - default: true
+  - **paranoiaCheck** - default: true
 - **fingerprint**
   - **prepend** - resources with a full path will only get an applied integrity if the md5 checksum passes
 
@@ -118,9 +119,17 @@ Values:
   - This is because an attacker could check the integrity of authenticated only files or files behind a firewall.
 - Browsers that don't support integrity checking will fail-open so it is a safe property to use if configured correctly.
 
+### 'paranoiaCheck'
+
+**This addon will always take the default pain free stance; so this has been enabled by default until the issue is resolved.**
+
+Currently there is an encoding issue based on certain characters which is [still being debugged](https://code.google.com/p/chromium/issues/detail?id=527286) when using Chrome.
+This check fails if there is any non ASCII characters. On failure the file won't have a integrity attribute added.
+**Please note** this will be removed as a default in the future; with the desire to remove all of the checking code too.
+
 ## Browser support
 
-- Chrome 45 (Currently in unstable)
+- Chrome 45
 - Firefox stable 42
 
 Notes:
