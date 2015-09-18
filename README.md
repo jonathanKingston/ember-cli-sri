@@ -130,7 +130,7 @@ This check fails if there is any non ASCII characters. On failure the file won't
 ## Browser support
 
 - Chrome 45
-- Firefox stable 42
+- Firefox 43
 
 Notes:
 - Please verify Ember applications in supporting browsers, paying close attention to console messages
