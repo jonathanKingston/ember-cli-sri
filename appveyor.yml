@@ -1,7 +1,7 @@
 version: "{build}"
 
-build:
-  verbosity: minimal
+# Don't actually build.
+build: off
 
 # Test against these versions of Node.js.
 environment:
@@ -25,6 +25,3 @@ test_script:
   # Output useful info for debugging.
   - npm version
   - cmd: ember try $EMBER_TRY_SCENARIO test
-
-# Don't actually build.
-build: off

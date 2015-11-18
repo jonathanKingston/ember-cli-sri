@@ -30,7 +30,7 @@ module.exports = {
   },
   postprocessTree: function(type, tree) {
     var options = this.options || {};
-    if (options.enabled) {
+    if (type === 'all' && options.enabled) {
       return require('broccoli-sri-hash')(tree, options);
     } else {
       return tree;
