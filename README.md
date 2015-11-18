@@ -21,7 +21,7 @@ The reason to add this to your application is to protect against poisoned CDNs b
 ## Configure
 
 In `Brocfile.js` or `ember-cli-build.js`:
-```
+```js
 var app = new EmberApp({
 });
 ```
@@ -30,7 +30,7 @@ var app = new EmberApp({
 - All relative paths will be given an integrity attribute which will make compliant browsers check content matches
 
 Or:
-```
+```js
 var app = new EmberApp({
   SRI: {
     crossorigin: 'anonymous'
@@ -46,7 +46,7 @@ var app = new EmberApp({
 - You will need to specify `SRI.crossorigin`
 
 Or:
-```
+```js
 var app = new EmberApp({
   origin: 'https://subdomain.cloudfront.net/',
   fingerprint: {
@@ -73,7 +73,7 @@ var app = new EmberApp({
 
 ## Example output
 
-```
+```html
 <script src="https://example.com/thing-5e1978f9cfa158d9841d7b6d8a4e5c57.js" integrity="sha256-oFeuE/P+XJMjkMS5pAPudQOMGJQ323nQt+DQ+9zbdAg= sha512-+EXjzt0I7g6BjvqqjkkboGyRlFSfIuyzY2SQ43HQKZBrHsjmRzEdjSHhiDzVs30nXL9H0tKw6WbMPc6RfzUumQ==" crossorigin="anonymous" /></script>
 <script src="https://example.com/thing-5e1978f9cfa158d9841d7b6d8a4e5c57.js" crossorigin="use-credentials"  integrity="sha256-oFeuE/P+XJMjkMS5pAPudQOMGJQ323nQt+DQ+9zbdAg= sha512-+EXjzt0I7g6BjvqqjkkboGyRlFSfIuyzY2SQ43HQKZBrHsjmRzEdjSHhiDzVs30nXL9H0tKw6WbMPc6RfzUumQ=="/></script>
 <script src="unicode-chars.js" integrity="sha256-TH5eRuwfOSKZE0EKVF4WZ6gVQ/zUch4CZE2knqpS4MU= sha512-eANuTl8NOQEa4/zm44zxX6g7ffwf6NXftA2sv4ZiQURnJsfJkUnYP8XpN2XVVZee4SjB32i28WM6trs9HVgQmA=="/></script>
