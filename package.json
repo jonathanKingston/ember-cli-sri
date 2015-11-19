@@ -46,7 +46,7 @@
     "security"
   ],
   "dependencies": {
-    "broccoli-sri-hash": "^1.2.1"
+    "broccoli-sri-hash": "^1.2.2"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
