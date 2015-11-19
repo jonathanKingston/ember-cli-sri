@@ -19,6 +19,8 @@ install:
   - md C:\nc
   - npm install -g npm@latest
   - npm install -g bower
+  # Install PhantomJS
+  - cinst PhantomJS -y
   # Workaround https://github.com/npm/npm/wiki/Troubleshooting#upgrading-on-windows
   - set PATH=%APPDATA%\npm;%PATH%
   - npm config set cache C:\nc
