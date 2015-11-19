@@ -3,6 +3,10 @@ version: "{build}"
 # Do not attempt to build a project
 build: off
 
+cache:
+  - node_modules -> package.json
+  - bower_components -> bower.json
+
 # Test against these versions of Node.js.
 environment:
   matrix:
