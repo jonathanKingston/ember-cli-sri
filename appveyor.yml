@@ -1,6 +1,6 @@
 version: "{build}"
 
-# Don't actually build.
+# Do not attempt to build a project
 build: off
 
 # Test against these versions of Node.js.
@@ -14,14 +14,17 @@ install:
   # Typical npm stuff.
   - md C:\nc
   - npm install -g npm@latest
+  - npm install -g bower
   # Workaround https://github.com/npm/npm/wiki/Troubleshooting#upgrading-on-windows
   - set PATH=%APPDATA%\npm;%PATH%
   - npm config set cache C:\nc
   - npm version
   - npm install
+  - bower install
 
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
   - npm version
-  - cmd: ember try $EMBER_TRY_SCENARIO test
+  - node --version
+  - npm test
