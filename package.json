@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-sri",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "SRI generation for Ember CLI",
   "directories": {
     "doc": "doc",
@@ -46,7 +46,7 @@
     "security"
   ],
   "dependencies": {
-    "broccoli-sri-hash": "^1.2.2"
+    "broccoli-sri-hash": "^2.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
