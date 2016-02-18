@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-sri",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "SRI generation for Ember CLI",
   "directories": {
     "doc": "doc",
