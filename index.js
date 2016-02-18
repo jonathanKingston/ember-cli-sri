@@ -27,6 +27,14 @@ module.exports = {
     if (app.options.origin) {
       this.options.origin = app.options.origin;
     }
+
+    if (!('paranoiaCheck' in this.options)) {
+      this.options.paranoiaCheck = false;
+    }
+
+    if (!('fingerprintCheck' in this.options)) {
+      this.options.fingerprintCheck = false;
+    }
   },
   postprocessTree: function(type, tree) {
     var options = this.options || {};

@@ -67,7 +67,8 @@ var app = new EmberApp({
           - `anonymous`
   - **runsIn** - default: ['production', 'test']
   - **enabled** - default: true
-  - **paranoiaCheck** - default: true
+  - **paranoiaCheck** - default: false
+  - **fingerprintCheck** - default: false
 - **fingerprint**
   - **prepend** - resources with a full path will only get an applied integrity if the md5 checksum passes
 
@@ -121,15 +122,23 @@ Values:
 
 ### 'paranoiaCheck'
 
-**This addon will always take the default pain free stance; so this has been enabled by default until the issue is resolved.**
+There was an encoding issue based on certain characters when using Chrome, the fix for which [landed](https://code.google.com/p/chromium/issues/detail?id=527286) in Chrome 46.
+This check fails if there is any non ASCII characters. On failure the file won't have an integrity attribute added.
+Currently, it defaults to false (i.e. this check is disabled). You can reenable it if you wish to remain compatible with
+versions of Chrome &lt; 46.
 
-Currently there is an encoding issue based on certain characters which is [still being debugged](https://code.google.com/p/chromium/issues/detail?id=527286) when using Chrome.
-This check fails if there is any non ASCII characters. On failure the file won't have a integrity attribute added.
-**Please note** this will be removed as a default in the future; with the desire to remove all of the checking code too.
+### 'fingerprintCheck'
+
+If you are fingerprinting your assets and/or prepending a URL (e.g. to your static web server or CDN), you will likely want
+to disable this check. Otherwise, if your assets include other assets, they will fail the check and the file won't have an
+integrity attribute added.
+Currently, it defaults to false (i.e. this check is disabled). You can reenable it for a little extra confidence that the
+correct files are being hashed, but only if you are not fingerprinting or prepending your assets and have no plans to in the
+future.
 
 ## Browser support
 
-- Chrome 45
+- Chrome 46
 - Firefox 43
 
 Notes:
