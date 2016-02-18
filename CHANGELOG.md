@@ -1,3 +1,11 @@
+# 2.1.0
+- bump broccoli-sri-hash to 2.1.0
+- Add fingerprintCheck option and documentation
+- lock jQuery to 1.11.3 to [fix Travis and AppVery issues](http://emberjs.com/blog/2016/01/15/ember-2-3-released.html#toc_removing-the-jquery-version-assertion)
+
+# 2.0.0
+- Disable paranoiaCheck by default
+
 # 1.1.0
 - Enable by default paranoiaCheck
 - Force code to run after ember-cli-gzip thanks @taylon
