@@ -11,6 +11,9 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jonathanKingston/ember-cli-sri"
