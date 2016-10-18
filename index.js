@@ -6,6 +6,8 @@ module.exports = {
   included: function(app) {
     this._super.included.apply(this,arguments);
 
+    var config = this.app.project.config(app.env);
+
     this.options = app.options.SRI || {};
 
     if (!('enabled' in this.options)) {
@@ -26,6 +28,10 @@ module.exports = {
 
     if (app.options.origin) {
       this.options.origin = app.options.origin;
+    }
+
+    if (config.rootURL) {
+      this.options.rootURL = config.rootURL;
     }
 
     if (!('paranoiaCheck' in this.options)) {
